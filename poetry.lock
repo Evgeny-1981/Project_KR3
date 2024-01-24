@@ -31,6 +31,18 @@ optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 
 [[package]]
+name = "datetime"
+version = "5.4"
+description = "This package provides a DateTime data type, as known from Zope. Unless you need to communicate with Zope APIs, you're probably better off using Python's built-in datetime module."
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.dependencies]
+pytz = "*"
+"zope.interface" = "*"
+
+[[package]]
 name = "more-itertools"
 version = "10.2.0"
 description = "More routines for operating on iterables, beyond itertools"
@@ -88,6 +100,14 @@ checkqa-mypy = ["mypy (==v0.761)"]
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
+name = "pytz"
+version = "2023.3.post1"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "wcwidth"
 version = "0.2.13"
 description = "Measures the displayed width of unicode strings in a terminal"
@@ -95,18 +115,34 @@ category = "dev"
 optional = false
 python-versions = "*"
 
+[[package]]
+name = "zope.interface"
+version = "6.1"
+description = "Interfaces for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+docs = ["sphinx", "repoze.sphinx.autointerface", "sphinx-rtd-theme"]
+test = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
+testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
+
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "491a37bfc34281cb87606e36384453db66e94ff9c309c7a34be6f9380c5e9782"
+content-hash = "a20c1f316bf1d1c89cf4ea37331a7eae2937ddcba90380d5495b1d88a8d27384"
 
 [metadata.files]
 atomicwrites = []
 attrs = []
 colorama = []
+datetime = []
 more-itertools = []
 packaging = []
 pluggy = []
 py = []
 pytest = []
+pytz = []
 wcwidth = []
+"zope.interface" = []
