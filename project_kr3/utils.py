@@ -1,5 +1,7 @@
 import json
 
+from datetime import datetime
+
 
 def sort_operations():
     """Функция сортирует json файл"""
@@ -24,8 +26,12 @@ def return_last_operations(operations_sort):
     return result_operations
 
 
-def format_output_data():
-    pass
+def format_output_data(item):
+    """Функция преобразует доту в формат %d.%m.%Y и возвращает полуенное значение"""
+
+
+    output_data = datetime.strftime(datetime.strptime(item.split('T')[0], '%Y-%m-%d'), '%d.%m.%Y')
+    return output_data
 def format_private_num(item):
     """Функция возвращает номер карты/счета в приватном виде"""
 
@@ -37,6 +43,3 @@ def format_private_num(item):
         private_num = name + ' ' + '**' + private_num[-4:]
 
     return private_num
-
-def format_card_account():
-    pass
