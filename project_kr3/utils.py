@@ -23,6 +23,9 @@ def return_last_operations(operations_sort):
 
     return result_operations
 
+
+def format_output_data():
+    pass
 def format_card_number():
     pass
 
