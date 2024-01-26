@@ -32,14 +32,14 @@ def format_output_data(item):
 
     output_data = datetime.strftime(datetime.strptime(item.split('T')[0], '%Y-%m-%d'), '%d.%m.%Y')
     return output_data
-def format_private_num(item):
+def format_account_number(item):
     """Функция возвращает номер карты/счета в приватном виде"""
 
-    private_num = item.split()[-1]
+    account_number = item.split()[-1]
     name = ' '.join(item.split()[:-1])
-    if len(private_num) == 16:
-        private_num = name + ' ' + private_num[0:4] + ' ' + private_num[5:7] + '** **** ' + private_num[-4:]
+    if len(account_number) == 16:
+        account_number = name + ' ' + account_number[0:4] + ' ' + account_number[5:7] + '** **** ' + account_number[-4:]
     else:
-        private_num = name + ' ' + '**' + private_num[-4:]
+        account_number = name + ' ' + '**' + account_number[-4:]
 
-    return private_num
+    return account_number
