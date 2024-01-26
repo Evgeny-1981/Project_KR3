@@ -30,10 +30,11 @@ def format_private_num(item):
     """Функция возвращает номер карты/счета в приватном виде"""
 
     private_num = item.split()[-1]
+    name = ' '.join(item.split()[:-1])
     if len(private_num) == 16:
-        private_num = private_num[0:4] + ' ' + private_num[5:7] + '** **** ' + private_num[-4:]
+        private_num = name + ' ' + private_num[0:4] + ' ' + private_num[5:7] + '** **** ' + private_num[-4:]
     else:
-        private_num = '****************' + private_num[-4:]
+        private_num = name + ' ' + '**' + private_num[-4:]
 
     return private_num
 
