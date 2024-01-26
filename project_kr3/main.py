@@ -1,5 +1,5 @@
 import datetime
-from project_kr3.utils import (sort_operations, return_last_operations, format_private_num,
+from project_kr3.utils import (sort_operations, return_last_operations, format_account_number,
                                format_output_data)
 
 
@@ -8,12 +8,12 @@ last_operations = return_last_operations(operations)
 for item in last_operations:
     if len(item) > 6:
         print(f"{format_output_data(item['date'])} {item['description']}\n"
-              f"{format_private_num(item['from'])}"
-              f" -> {format_private_num(item['to'])}\n"
+              f"{format_account_number(item['from'])}"
+              f" -> {format_account_number(item['to'])}\n"
               f"{item['operationAmount']['amount']}"
               f" {item['operationAmount']['currency']['name']}\n")
     else:
         print(f"{format_output_data(item['date'])} {item['description']}\n"
-              f"{format_private_num(item['to'])}\n"
+              f"{format_account_number(item['to'])}\n"
               f"{item['operationAmount']['amount']}"
               f" {item['operationAmount']['currency']['name']}\n")

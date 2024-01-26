@@ -31,7 +31,7 @@ def format_output_data(item):
     return output_data
 
 
-def format_private_num(item):
+def format_account_number(item):
     """Функция возвращает номер карты/счета в приватном виде"""
 
     account_number = item.split()[-1]
