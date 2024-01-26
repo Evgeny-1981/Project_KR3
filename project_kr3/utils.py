@@ -9,7 +9,7 @@ def sort_operations():
 
     with open("operations.json", "r", encoding='utf8') as json_file:
         operations = json.load(json_file)
-    operations_sort = [item for item in operations if item.get('state') == "EXECUTED"]
+    operations_sort = [item for item in operations if item.get('state') == "EXECUTED" and item.get('from') is not None]
     operations_sort.sort(key=lambda x: x.get('date'), reverse=True)
 
     return operations_sort
