@@ -7,7 +7,7 @@ from project_kr3.utils import (sort_operations, return_last_operations,
 def test_sort_operations():
     assert str(type(sort_operations())) == "<class 'list'>"
 def test_return_last_operations():
-    assert return_last_operations([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]) == [1, 2, 3, 4, 5]
+    assert return_last_operations([1, 2, 3, 4, 5, 6, 7]) == [1, 2, 3, 4, 5]
 
 
 def test_format_output_date():
