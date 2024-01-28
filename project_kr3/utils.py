@@ -1,13 +1,14 @@
 import json
-import os
+import pathlib
+from pathlib import Path
 from datetime import datetime
 
 
 def sort_operations():
     """Функция сортирует json файл"""
 
-    file_path = os.path.join("/home/evgeny/PycharmProjects/project_KR3/project_kr3/data/operations.json")
-    with open(file_path, "r", encoding='utf8') as file:
+    path = Path(pathlib.Path.home(), 'PycharmProjects', 'project_KR3', 'project_kr3', 'data', 'operations.json')
+    with open(path, "r", encoding='utf8') as file:
         operations = json.load(file)
     operations_sort = [item for item in operations if item.get('state') == "EXECUTED" and item.get('from') is not None]
     operations_sort.sort(key=lambda x: x.get('date'), reverse=True)
