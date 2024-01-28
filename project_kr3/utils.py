@@ -1,11 +1,13 @@
 import json
+import os
 from datetime import datetime
 
 
 def sort_operations():
     """Функция сортирует json файл"""
 
-    with open("operations.json", "r", encoding='utf8') as file:
+    file_path = os.path.join("/home/evgeny/PycharmProjects/project_KR3/project_kr3/data/operations.json")
+    with open(file_path, "r", encoding='utf8') as file:
         operations = json.load(file)
     operations_sort = [item for item in operations if item.get('state') == "EXECUTED" and item.get('from') is not None]
     operations_sort.sort(key=lambda x: x.get('date'), reverse=True)
@@ -23,7 +25,7 @@ def return_last_operations(operations_sort):
     return result_operations
 
 
-def format_output_data(item):
+def format_output_date(item):
     """Функция преобразует доту в формат %d.%m.%Y и возвращает полуенное значение"""
 
     output_data = datetime.strftime(datetime.strptime(item.split('T')[0], '%Y-%m-%d'), '%d.%m.%Y')
@@ -37,7 +39,9 @@ def format_account_number(item):
     name = ' '.join(item.split()[:-1])
     if len(account_number) == 16:
         account_number = name + ' ' + account_number[0:4] + ' ' + account_number[5:7] + '** **** ' + account_number[-4:]
-    else:
+    elif len(account_number) == 20:
         account_number = name + ' ' + '**' + account_number[-4:]
+    else:
+        account_number = 'Неверный или отсутствует номер/счет'
 
     return account_number
