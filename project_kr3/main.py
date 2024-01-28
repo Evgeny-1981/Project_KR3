@@ -11,8 +11,4 @@ for item in last_operations:
               f" -> {format_account_number(item['to'])}\n"
               f"{item['operationAmount']['amount']}"
               f" {item['operationAmount']['currency']['name']}\n")
-    # else:
-    #     print(f"{format_output_data(item['date'])} {item['description']}\n"
-    #           f"{format_account_number(item['to'])}\n"
-    #           f"{item['operationAmount']['amount']}"
-    #           f" {item['operationAmount']['currency']['name']}\n")
+
