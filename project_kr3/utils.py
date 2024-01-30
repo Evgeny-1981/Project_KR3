@@ -16,9 +16,7 @@ def sort_operations(file):
 def return_last_operations(operations_sort):
     """Функция возвращает список последних 5 операций"""
 
-    result_operations = []
-    for item in operations_sort[0:5]:
-        result_operations.append(item)
+    result_operations = [item for item in operations_sort[0:5]]
 
     return result_operations
 
@@ -39,7 +37,7 @@ def format_account_number(item):
     if len(account_number) == 16:
         account_number = name + ' ' + account_number[0:4] + ' ' + account_number[5:7] + '** **** ' + account_number[-4:]
     elif len(account_number) == 20:
-        account_number = name + ' ' + '**' + account_number[-4:]
+         account_number = name + ' ' + '**' + account_number[-4:]
     else:
         account_number = 'Неверный или отсутствует номер/счет'
 
