@@ -1,9 +1,12 @@
 import pytest
-from project_kr3.utils import sort_operations, return_last_operations, format_output_date, format_account_number
+from project_kr3.utils import (sort_operations,
+                               return_last_operations,
+                               format_output_date,
+                               format_account_number)
 
 
 def test_sort_operations():
-    assert str(type(sort_operations('test.json'))) == "<class 'list'>"
+    assert str(type(sort_operations('tests/test.json'))) == "<class 'list'>"
 
 
 def test_return_last_operations():
